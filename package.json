@@ -1,0 +1,22 @@
+{
+  "name": "meta",
+  "version": "1.0.0",
+  "description": "meta IO",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm -i install && cd server && npm -i install && cd ../client && npm -i install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bienpx224/meta.git"
+  },
+  "author": "bienpx224",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bienpx224/meta/issues"
+  },
+  "homepage": "https://github.com/bienpx224/meta#readme",
+  "dependencies": {
+  }
+}
