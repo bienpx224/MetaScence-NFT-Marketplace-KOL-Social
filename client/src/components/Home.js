@@ -8,11 +8,6 @@ const Home  = ()=>{
 
 
     // Component Did Mount 
-    React.useEffect(() => {
-        fetch("/api")
-          .then((res) => res.json())
-          .then((data) => {console.log(data);setUser(data.message)});
-      }, []);
 
     return(
         <div>

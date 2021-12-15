@@ -20,7 +20,7 @@
     "web-vitals": "^1.1.2",
     "web3": "^1.6.1"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:3001", 
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && rm -rf ../server/client/build && mv build ../server/client/build",

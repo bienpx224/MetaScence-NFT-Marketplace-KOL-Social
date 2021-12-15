@@ -30,11 +30,12 @@ $(window).on('load', function() {
 	/*------------------
 		Navigation
 	--------------------*/
-	$('.main__menu').slicknav({
+	$('.main__menu').slick({
 		'appendTo' : '.header__warp',
 		'openedSymbol': '<i class="fa fa-angle-up"></i>',
 		'closedSymbol': '<i class="fa fa-angle-right"></i>'
 	});
+
 
 
 	/*-------------------
