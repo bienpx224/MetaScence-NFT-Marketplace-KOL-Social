@@ -1,10 +1,7 @@
-
-
 import React, { useState } from 'react';
-var AlbumIndex = () => {
 
+const Albums = () => {
     return (
-
         <section id="album" className="latest main">
             {/*Container*/}
             <div className="container">
@@ -56,12 +53,12 @@ var AlbumIndex = () => {
                 <div className="row justify-content-center">
                     <div className="col-12 col-lg-8 col-md-10">
                         <div className="block-tracklist">
-                            <div className="audiojs " classname="audiojs" id="audiojs_wrapper0"><audio preload className="album" src="mp3/01.mp3" />          <div className="play-pause">             <p className="play" />             <p className="pause" />             <p className="loading" />             <p className="error" />         </div>           <div className="scrubber">             <div className="progress" style={{ width: '0px' }} />             <div className="loaded" style={{ width: '0px' }} />         </div>           <div className="time">             <em className="played">00:00</em>/<strong className="duration">10:34</strong>         </div>           <div className="error-message" /></div>
+                            <audio preload className="album" />
                             <div className="block-content pb-0">
                                 <img className="mb-0" src="img/album/5.jpg" alt="" />
                             </div>
                             <ol className="playlist">
-                                <li className="pause">
+                                <li>
                                     <div className="as-link" data-src="mp3/01.mp3">
                                         {/*Row*/}
                                         <div className="row">
@@ -256,8 +253,11 @@ var AlbumIndex = () => {
                         </div>
                     </div>
                 </div>
+                {/*End row*/}
             </div>
+            {/*End container*/}
         </section>
     )
 }
-export default AlbumIndex;
+
+export default Albums;
