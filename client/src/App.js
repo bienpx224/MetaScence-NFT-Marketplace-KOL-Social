@@ -52,7 +52,7 @@ const App = () => {
   }, [isLogin])
 
   useEffect(() => {
-    // connectMetamask()
+    connectMetamask()
   }, [])
 
   async function connectMetamask() {
