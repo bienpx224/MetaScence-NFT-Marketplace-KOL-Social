@@ -12,7 +12,7 @@ const Discovery = () => {
             <div className="col-12 col-md-10 col-lg-9 ">
               <div className="block-content text-center gap-one-bottom-md">
                 <div className="block-title ">
-                  <h1 className="uppercase">Discography</h1>
+                  <h1 className="uppercase">Discovery more <a style={{cursor:"pointer"}}>></a></h1>
                 </div>
               </div>
             </div>
@@ -26,61 +26,61 @@ const Discovery = () => {
           <div className="row">
             <div className="col-12 col-md-6 col-lg-3">
               <div className="block-album block-content">
-                <h5 className="mb-0 opc-70 uppercase">Limitless</h5>
-                <a className="link" href="album-single.html">View Album ›</a>
+                <h5 className="mb-0 opc-70 uppercase">Son Tung MTP</h5>
+                <a className="link" href="album-single.html">View Tour ›</a>
                 <a href="album-single.html">
-                  <img className="animated" src="img/album/1.jpg" alt="" />
+                  <img className="animated" src="img/meta/sontung.jpg" alt="" />
                 </a>
                 <ul className="block-social list-inline mb-md-3">
                   <li className="list-inline-item mr-0"><a href="#"><i className="socicon-apple" /></a></li>
                   <li className="list-inline-item mr-0"><a href="#"><i className="socicon-play" /></a></li>
-                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-amazon" /></a></li>
-                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-soundcloud" /></a></li>
+                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-facebook" /></a></li>
+                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-twitter" /></a></li>
                 </ul>
               </div>
             </div>
             <div className="col-12 col-md-6 col-lg-3">
               <div className="block-album block-content">
-                <h5 className="mb-0 opc-70 uppercase">Set me free</h5>
-                <a className="link" href="album-single.html">View Album ›</a>
+                <h5 className="mb-0 opc-70 uppercase">AMEE singer</h5>
+                <a className="link" href="album-single.html">View Tour ›</a>
                 <a href="album-single.html">
-                  <img className="animated" src="img/album/2.jpg" alt="" />
+                  <img className="animated" src="img/meta/amee.jpg" alt="" />
                 </a>
                 <ul className="block-social list-inline mb-md-3">
                   <li className="list-inline-item mr-0"><a href="#"><i className="socicon-apple" /></a></li>
                   <li className="list-inline-item mr-0"><a href="#"><i className="socicon-play" /></a></li>
-                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-amazon" /></a></li>
-                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-soundcloud" /></a></li>
+                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-facebook" /></a></li>
+                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-twitter" /></a></li>
                 </ul>
               </div>
             </div>
             <div className="col-12 col-md-6 col-lg-3">
               <div className="block-album block-content">
-                <h5 className="mb-0 opc-70 uppercase">How It Feels</h5>
-                <a className="link" href="album-single.html">View Album ›</a>
+                <h5 className="mb-0 opc-70 uppercase">Bui anh tuan</h5>
+                <a className="link" href="album-single.html">View tour ›</a>
                 <a href="album-single.html">
-                  <img className="animated" src="img/album/3.jpg" alt="" />
+                  <img className="animated" src="img/meta/buianhtuan.jpg" alt="" />
                 </a>
                 <ul className="block-social list-inline mb-md-3">
                   <li className="list-inline-item mr-0"><a href="#"><i className="socicon-apple" /></a></li>
                   <li className="list-inline-item mr-0"><a href="#"><i className="socicon-play" /></a></li>
-                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-amazon" /></a></li>
-                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-soundcloud" /></a></li>
+                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-facebook" /></a></li>
+                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-twitter" /></a></li>
                 </ul>
               </div>
             </div>
             <div className="col-12 col-md-6 col-lg-3">
               <div className="block-album block-content">
-                <h5 className="mb-0 uppercase opc-70">Tonight</h5>
-                <a className="link" href="album-single.html">View Album ›</a>
+                <h5 className="mb-0 uppercase opc-70">Chipu Singer</h5>
+                <a className="link" href="album-single.html">View tour ›</a>
                 <a href="album-single.html">
-                  <img className="animated" src="img/album/4.jpg" alt="" />
+                  <img className="animated" src="img/meta/chipu.jpg" alt="" />
                 </a>
                 <ul className="block-social list-inline mb-md-3">
                   <li className="list-inline-item mr-0"><a href="#"><i className="socicon-apple" /></a></li>
                   <li className="list-inline-item mr-0"><a href="#"><i className="socicon-play" /></a></li>
-                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-amazon" /></a></li>
-                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-soundcloud" /></a></li>
+                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-facebook" /></a></li>
+                  <li className="list-inline-item mr-0"><a href="#"><i className="socicon-twitter" /></a></li>
                 </ul>
               </div>
             </div>

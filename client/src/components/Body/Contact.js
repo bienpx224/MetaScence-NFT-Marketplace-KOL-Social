@@ -12,7 +12,7 @@ const Contact = () => {
             <div className="col-12 col-md-10 col-lg-9">
               <div className="block-content  gap-one-bottom-md text-center">
                 <div className="block-title ">
-                  <h1 className="uppercase">stay in touche</h1>
+                  <h1 className="uppercase">stay in touch</h1>
                 </div>
               </div>
             </div>
@@ -29,9 +29,9 @@ const Contact = () => {
                   <div className="card text-center">
                     <div className="card-body">
                       <h2 className="uppercase ">Booking</h2>
-                      <p className="mb-0"><em className="uppercase h5 opc-70">Benaissa Ghrib</em>
-                        T+(513)352-3209<br />
-                        booking@mousiqua.net
+                      <p className="mb-0"><em className="uppercase h5 opc-70">TOUR & SHOW</em>
+                        +84 347 168 731<br />
+                        metascene_booking@gmail.com
                       </p>
                     </div>
                   </div>
@@ -39,10 +39,10 @@ const Contact = () => {
                 <li className="col-md-6  col-lg-4">
                   <div className="card text-center">
                     <div className="card-body">
-                      <h2 className="uppercase">Press</h2>
-                      <p className="mb-0"><em className="uppercase h5 opc-70">Zakaria Kalal</em>
-                        T+(513)352-3209<br />
-                        press@mousiqua.net
+                      <h2 className="uppercase">Invest</h2>
+                      <p className="mb-0"><em className="uppercase h5 opc-70">Invest</em>
+                      +84 347 168 731<br />
+                        metascene_invest@gmail.com
                       </p>
                     </div>
                   </div>
@@ -51,9 +51,9 @@ const Contact = () => {
                   <div className="card text-center">
                     <div className="card-body">
                       <h2 className="uppercase ">info</h2>
-                      <p className=" mb-0"><em className="uppercase h5 opc-70">Youssef Ait</em>
-                        T+(513)352-3209<br />
-                        info@mousiqua.net
+                      <p className=" mb-0"><em className="uppercase h5 opc-70">contact us</em>
+                      +84 347 168 731<br />
+                        metascene_info@gmail.com
                       </p>
                     </div>
                   </div>

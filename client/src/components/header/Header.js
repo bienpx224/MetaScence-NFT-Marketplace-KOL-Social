@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import MainSlider from './MainSlider';
-import BlockSearchForm from './BlockSearchForm';
-import Navigate from './Navigate';
+import ModalVideo from 'react-modal-video'
 
 const Header = () => {
-
+    const [isOpen, setOpen] = useState(false)
     return (
         <section className="hero">
             {/*Main slider*/}
+            <ModalVideo channel='custom' autoplay isOpen={isOpen} url="img/meta/video1.mp4" 
+                                        onClose={() => setOpen(false)} />
             <div className="main-slider slider flexslider">
                 <ul className="slides">
                     <li>
@@ -25,8 +24,8 @@ const Header = () => {
                                         {/* <div className="back-rect" /> */}
                                         <h1 className="large text-white uppercase mb-0">Welcome to MetaScenes</h1>
                                         <h5 className="mb-0 text-white uppercase">Bring the Real Scenes into Virtual Scenes</h5>
-                                        <a className="video-play-but popup-youtube"
-                                            href="https://drive.google.com/file/d/1flTt2zrlIvTd0uk-Rq2HCo4QG2iPr2b0/preview" />
+                                        <a onClick={()=> setOpen(true)} className="video-play-but popup-youtube" />
+                                        
                                         {/* <div className="front-rect" /> */}
                                     </div>
                                 </div>
@@ -49,8 +48,7 @@ const Header = () => {
                                     <div className="inner-hero">
                                         <h1 className="large text-white uppercase mb-0">Connect the world into your eyes</h1>
                                         <h5 className="mb-0 text-white uppercase">MetaScenes is a decentralized virtual network built on the blockchain</h5>
-                                        <a className="video-play-but popup-youtube"
-                                            href="https://drive.google.com/file/d/1flTt2zrlIvTd0uk-Rq2HCo4QG2iPr2b0/preview" />
+                                        <a className="video-play-but popup-youtube" onClick={()=> setOpen(true)} />
                                     </div>
                                 </div>
                                 {/*End row*/}

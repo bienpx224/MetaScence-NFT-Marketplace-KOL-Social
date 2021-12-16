@@ -603,6 +603,7 @@ Created by : mutationthemes
 /* End audio player*/
 /* Band members section*/
  .block-member{
+     min-height: 250px;
      position: relative;
 }
  .block-member .member-info{
@@ -612,7 +613,7 @@ Created by : mutationthemes
      background: #ff5252;
      width: 100%;
      text-align: center;
-     padding: 1.45rem 0;
+     padding: 0.45rem 0;
 }
 /* End band members section*/
 /* Tours section*/

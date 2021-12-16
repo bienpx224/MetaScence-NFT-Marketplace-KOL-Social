@@ -7,9 +7,10 @@ import getWeb3 from './utils/getWeb3'
 import connectWeb3Infura from "./utils/connectWeb3Infura";
 import { checkValidNetwork, listenEventChangeMetamask } from "./utils/listenChangeMetamask";
 import { web3_connect, init_contract, init_contract_infura } from "./store/actions/indexAction";
-import OnepiToken from './contract/OnepiToken.json'
+import OnepiToken from './contracts/OnepiToken.json'
 import ReactNotification from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
+import 'react-modal-video/css/modal-video.css';
 
 
 const App = () => {

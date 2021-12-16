@@ -21,14 +21,14 @@ const Home = () => {
     <div className="wrapper">
       <BlockSearchForm />
       <Header />
-      <Albums />
+      {/* <Albums /> */}
       <AboutUs />
+      <Block />
       <Discovery />
-      <UpComing />
-      <Members />
       <UpComingTour />
       <Gallery />
-      <Block />
+      {/* <UpComing /> */}
+      <Members />
       <Contact />
 
       <Footer />
