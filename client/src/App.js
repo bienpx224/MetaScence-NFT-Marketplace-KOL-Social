@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from "./components/Home";
+import Index from "./components/HuyHung/Index";
 import { createBrowserHistory } from "history";
 import getWeb3 from './utils/getWeb3'
 import connectWeb3Infura from "./utils/connectWeb3Infura";
@@ -72,8 +73,8 @@ const App = () => {
     <BrowserRouter history={hist}>
       <ReactNotification />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<Home />} />
+        <Route path="/" element={<Index />} />
+        <Route path="*" element={<Index />} />
       </Routes>
     </BrowserRouter>
   );
