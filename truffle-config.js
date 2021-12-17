@@ -22,7 +22,8 @@
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
-
+const HDWalletProvider = require('truffle-hdwallet-provider');
+const seed = "away stand spell luggage oblige call invest frown volume night elite glad";
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -47,12 +48,27 @@ module.exports = {
       // host: "127.0.0.1",
       // port: 7545,
       // network_id: "*"
-      // }
+      // },
     development: {          // Ganache-cli default
      host: "127.0.0.1",     // Localhost (default: none)
      port: 8545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
+    // rinkeby: {
+    //   host: "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161", // Connect to geth on the specified
+    //   port: 8545,
+    //   from: "0x96232fe6060F60ED05BadD000B76C64Efe5F6EA8", // default address to use for any transaction Truffle makes during migrations
+    //   network_id: 4,
+    //   gas: 4612388 // Gas limit used for deploys
+    // }
+    // rinkeby: {
+    //   provider: () => new HDWalletProvider(seed, `https://mainnet.infura.io/v3/d9446f93883b4fd78856743e1160035b`),
+    //   network_id: 4,       // Ropsten's id
+    //   gas: 5500000,        // Ropsten has a lower block limit than mainnet
+    //   confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+    //   timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+    //   skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+    // },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port

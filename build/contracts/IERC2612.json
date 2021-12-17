@@ -77,7 +77,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"DOMAIN_SEPARATOR\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"nonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"DOMAIN_SEPARATOR()\":{\"details\":\"Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}.\"},\"nonces(address)\":{\"details\":\"Returns the current nonce for `owner`. This value must be included whenever a signature is generated for {permit}. Every successful call to {permit} increases ``owner``'s nonce by one. This prevents a signature from being used multiple times.\"},\"permit(address,address,uint256,uint256,uint8,bytes32,bytes32)\":{\"details\":\"Sets `value` as the allowance of `spender` over ``owner``'s tokens, given ``owner``'s signed approval. IMPORTANT: The same issues {IERC20-approve} has related to transaction ordering also apply here. Emits an {Approval} event. Requirements: - `spender` cannot be the zero address. - `deadline` must be a timestamp in the future. - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner` over the EIP712-formatted function arguments. - the signature must use ``owner``'s current nonce (see {nonces}). For more information on the signature format, see the https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP section].\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/@openzeppelin/contracts/interfaces/draft-IERC2612.sol\":\"IERC2612\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/@openzeppelin/contracts/interfaces/draft-IERC2612.sol\":{\"keccak256\":\"0xb6eebc948c143520296b7d4055c8dcf6a5688a69101cd96740cc38bf2b7c1261\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0e78d674d333f650f4a94235739fecfae7469ebd3db2cd9fe0399eaa17577c92\",\"dweb:/ipfs/QmRMkGGmJVJsN9V8HRpdj8jj2h7NqHoS5YStEiWkHuqmPr\"]},\"project:/contracts/@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol\":{\"keccak256\":\"0x0b62257c441497c0f1a0879667f94d07a4569d34eaccbc8982602ab07c5cab9d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://77ddad64ea3acbf05aa103249fa8483e66e5936585da9df2090601881a23740a\",\"dweb:/ipfs/QmWu7iCK4zzw3gXd13YH8SbHxLVf9e2fyv6CHsLP4DDrLZ\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"DOMAIN_SEPARATOR\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"nonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"DOMAIN_SEPARATOR()\":{\"details\":\"Returns the domain separator used in the encoding of the signature for {permit}, as defined by {EIP712}.\"},\"nonces(address)\":{\"details\":\"Returns the current nonce for `owner`. This value must be included whenever a signature is generated for {permit}. Every successful call to {permit} increases ``owner``'s nonce by one. This prevents a signature from being used multiple times.\"},\"permit(address,address,uint256,uint256,uint8,bytes32,bytes32)\":{\"details\":\"Sets `value` as the allowance of `spender` over ``owner``'s tokens, given ``owner``'s signed approval. IMPORTANT: The same issues {IERC20-approve} has related to transaction ordering also apply here. Emits an {Approval} event. Requirements: - `spender` cannot be the zero address. - `deadline` must be a timestamp in the future. - `v`, `r` and `s` must be a valid `secp256k1` signature from `owner` over the EIP712-formatted function arguments. - the signature must use ``owner``'s current nonce (see {nonces}). For more information on the signature format, see the https://eips.ethereum.org/EIPS/eip-2612#specification[relevant EIP section].\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/@openzeppelin/contracts/interfaces/draft-IERC2612.sol\":\"IERC2612\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/@openzeppelin/contracts/interfaces/draft-IERC2612.sol\":{\"keccak256\":\"0x7973f52ff7f598d4f1e20f1ce0153a6fb18bb2a9132c531716a0ad81411e13d6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2bda6a1421072221fe8a0fc54186272ae301b9ca1ca7dd28b0196a9110be695a\",\"dweb:/ipfs/QmdqYWArPmZ5RGVpEJnDQkZvSxjTqvoMeueXiZsG6qFzQ5\"]},\"project:/contracts/@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol\":{\"keccak256\":\"0xe7713f1b362f8b80e28d5a7e8b66c3f2236203fd86d01eca0a29a9e6a3f4d97f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://dff26284905c18cc8ad0c2422db931817aed9114b0a0f97c6f12fa29e9b2e422\",\"dweb:/ipfs/QmWG1Co1A5SG3zhoayQ7B5WjRXJWMWM3MGXS4wZh4zdwjp\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -85,8 +85,8 @@
   "deployedGeneratedSources": [],
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: MIT\r\n// OpenZeppelin Contracts v4.4.0 (interfaces/draft-IERC2612.sol)\r\n\r\npragma solidity ^0.8.0;\r\n\r\nimport \"../token/ERC20/extensions/draft-IERC20Permit.sol\";\r\n\r\ninterface IERC2612 is IERC20Permit {}\r\n",
-  "sourcePath": "D:\\Blockchain\\MetaScence\\contracts\\@openzeppelin\\contracts\\interfaces\\draft-IERC2612.sol",
+  "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts v4.4.0 (interfaces/draft-IERC2612.sol)\n\npragma solidity ^0.8.0;\n\nimport \"../token/ERC20/extensions/draft-IERC20Permit.sol\";\n\ninterface IERC2612 is IERC20Permit {}\n",
+  "sourcePath": "/Users/bienpx224/Desktop/Solidity/MetaScence/contracts/@openzeppelin/contracts/interfaces/draft-IERC2612.sol",
   "ast": {
     "absolutePath": "project:/contracts/@openzeppelin/contracts/interfaces/draft-IERC2612.sol",
     "exportedSymbols": {
@@ -110,7 +110,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "101:23:163"
+        "src": "98:23:163"
       },
       {
         "absolutePath": "project:/contracts/@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
@@ -120,7 +120,7 @@
         "nodeType": "ImportDirective",
         "scope": 6243,
         "sourceUnit": 11951,
-        "src": "128:58:163",
+        "src": "123:58:163",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -133,11 +133,11 @@
               "name": "IERC20Permit",
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 11950,
-              "src": "212:12:163"
+              "src": "205:12:163"
             },
             "id": 6241,
             "nodeType": "InheritanceSpecifier",
-            "src": "212:12:163"
+            "src": "205:12:163"
           }
         ],
         "canonicalName": "IERC2612",
@@ -150,15 +150,15 @@
           11950
         ],
         "name": "IERC2612",
-        "nameLocation": "200:8:163",
+        "nameLocation": "193:8:163",
         "nodeType": "ContractDefinition",
         "nodes": [],
         "scope": 6243,
-        "src": "190:37:163",
+        "src": "183:37:163",
         "usedErrors": []
       }
     ],
-    "src": "101:128:163"
+    "src": "98:123:163"
   },
   "legacyAST": {
     "absolutePath": "project:/contracts/@openzeppelin/contracts/interfaces/draft-IERC2612.sol",
@@ -183,7 +183,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "101:23:163"
+        "src": "98:23:163"
       },
       {
         "absolutePath": "project:/contracts/@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
@@ -193,7 +193,7 @@
         "nodeType": "ImportDirective",
         "scope": 6243,
         "sourceUnit": 11951,
-        "src": "128:58:163",
+        "src": "123:58:163",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -206,11 +206,11 @@
               "name": "IERC20Permit",
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 11950,
-              "src": "212:12:163"
+              "src": "205:12:163"
             },
             "id": 6241,
             "nodeType": "InheritanceSpecifier",
-            "src": "212:12:163"
+            "src": "205:12:163"
           }
         ],
         "canonicalName": "IERC2612",
@@ -223,15 +223,15 @@
           11950
         ],
         "name": "IERC2612",
-        "nameLocation": "200:8:163",
+        "nameLocation": "193:8:163",
         "nodeType": "ContractDefinition",
         "nodes": [],
         "scope": 6243,
-        "src": "190:37:163",
+        "src": "183:37:163",
         "usedErrors": []
       }
     ],
-    "src": "101:128:163"
+    "src": "98:123:163"
   },
   "compiler": {
     "name": "solc",
@@ -239,7 +239,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-16T04:20:05.812Z",
+  "updatedAt": "2021-12-17T06:48:58.139Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

@@ -1,0 +1,19 @@
+{
+  "contracts": {
+    "Market": "1f209561a56d7614ef8bcb1ddd8ede9237c74347",
+    "Migrations": "d7cc32b25fe7c465273f3c21208ada710ebb0a68",
+    "NFT": "132a619ff767e801aa1b46fdc82ed77b20af335e",
+    "OpenZeppelin/openzeppelin-contracts@4.3.0/ERC721": "54651246d3f6853bbc0fe2d3af475b0ea228dbf5",
+    "OpenZeppelin/openzeppelin-contracts@4.3.0/Strings": "1ce946f6a4eaa185320328620ccf999b9e86db7c"
+  },
+  "tests": {
+    "tests/test_deploy_nft.py": {
+      "coverage": false,
+      "isolated": false,
+      "results": ".",
+      "sha1": "e891360124e423164e2afdfae4510d905e8c5bd1",
+      "txhash": []
+    }
+  },
+  "tx": {}
+}

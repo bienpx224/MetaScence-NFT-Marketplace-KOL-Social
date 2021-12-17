@@ -1,0 +1,50 @@
+{
+    "dependencies": [
+        "smartcontractkit/chainlink-brownie-contracts@1.2.0",
+        "OpenZeppelin/openzeppelin-contracts@4.3.0"
+    ],
+    "compiler": {
+        "solc": {
+            "remappings": [
+                "@chainlink=smartcontractkit/chainlink-brownie-contracts@1.2.0",
+                "@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.3.0"
+            ]
+        }
+    },
+    "dotenv": ".env",
+    "networks": {
+        "defaul": "development",
+        "development": {
+            "keyhash": "0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311",
+            "fee": 100000000000000000,
+            "verify": false,
+            "recipient": "0x35Af6B31a61eC9F030849a3953394A69a1f9f9eC"
+        },
+        "rinkeby": {
+            "vrf_coordinator": "0xb3dCcb4Cf7a26f6cf6B120Cf5A73875B7BBc655B",
+            "eth_usd_data_feed": "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e",
+            "link_token": "0x01BE23585060835E02B77ef475b0Cc51aA1e0709",
+            "keyhash": "0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311",
+            "fee": 100000000000000000,
+            "weth": "0xc778417e063141139fce010982780140aa0cd5ab",
+            "verify": true
+        },
+        "kovan": {
+            "vrf_coordinator": "0xdD3782915140c8f3b190B5D67eAc6dc5760C46E9",
+            "key_hash": "0x6c3699283bda56ad74f6b855546325b68d482e983852a7a82979cc4807b641f4"
+        },
+        "ropsten": {
+            "eth_usd_data_feed": "0x8468b2bDCE073A157E560AA4D9CcF6dB1DB98507",
+            "verify": true
+        },
+        "mainnet-fork": {
+            "eth_usd_data_feed": "0x9326BFA02ADD2366b30bacB125260Af641031331"
+        },
+        "bsc-test": {
+            "verify": true
+        }
+    },
+    "wallets": {
+        "private_key": "${PRIVATE_KEY}"
+    }
+}

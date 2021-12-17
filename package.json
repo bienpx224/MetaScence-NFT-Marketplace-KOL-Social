@@ -17,5 +17,8 @@
     "url": "https://github.com/bienpx224/meta/issues"
   },
   "homepage": "https://github.com/bienpx224/meta#readme",
-  "dependencies": {}
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.0",
+    "truffle-hdwallet-provider": "^1.0.17"
+  }
 }
