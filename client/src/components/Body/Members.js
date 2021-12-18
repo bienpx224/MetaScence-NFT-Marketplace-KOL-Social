@@ -66,7 +66,7 @@ const Members = () => {
                     <div className="col-md-1 col-lg-1"></div>
                     <div className="col-md-3 col-lg-3">
                         <div className="block-member">
-                            <img src="img/meta/avatar.png" alt="" />
+                            <img src="img/meta/honghai.jpg" alt="" />
                             <div className="member-info">
                                 <h6 className="uppercase mb-0 ">Nguyễn Hồng Hải</h6>
                                 <span className=" mt-0"> Game manager</span>

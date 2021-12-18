@@ -1,6 +1,7 @@
 {
     "contractName": "MetaScenesToken",
-    "address": "0x81d9766B84c20c9F672b7AF0689Ed3fEDC78B205",
+    "address0": "0x81d9766B84c20c9F672b7AF0689Ed3fEDC78B205",
+    "address": "0x6ab61804a7EB95F40f079fB69f46A27b5343eB12",
     "abi": [
         {
             "inputs": [],

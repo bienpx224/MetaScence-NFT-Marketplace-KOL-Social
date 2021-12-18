@@ -176,6 +176,10 @@ iframe {
 
 
 /*Basic Styles*/
+.logo-icon{
+    height: 50px;
+    width: auto;
+}
 
 body {
     background: #13181d;

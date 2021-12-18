@@ -19,5 +19,6 @@ function get_balance(data){
 }
 
 
+
 module.exports = {web3_connect, metamask_connect,get_balance,
     init_contract_nft,init_contract_market,init_contract_infura_market}

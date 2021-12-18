@@ -1,6 +1,7 @@
 {
     "contractName": "MarketMST",
-    "address":"0xD7EB8d295f063Cf0c4Ac26782D90Ea77cbb184CB",
+     "address0":"0xD7EB8d295f063Cf0c4Ac26782D90Ea77cbb184CB",
+    "address":"0x5B8AB17fA33BE56bCe47e121d661BBdDf9f0E585",
     "abi": [
         {
             "anonymous": false,

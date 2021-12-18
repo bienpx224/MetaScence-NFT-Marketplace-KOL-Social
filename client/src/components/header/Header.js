@@ -32,10 +32,13 @@ const Header = () => {
     }
     const setOpenVideo = (index)=>{
         if(index == 1){
+            //https://drive.google.com/file/d/16voR5binSgDcEAXhfSZXfbI94pPSHkaQ/view
             setUrlVideo("img/video/video11.mp4")
+            // setUrlVideo("https://drive.google.com/file/d/16voR5binSgDcEAXhfSZXfbI94pPSHkaQ/preview")
             setOpen(true)
         }else{
             setUrlVideo("img/video/video22.mp4")
+            // setUrlVideo("https://drive.google.com/file/d/1oHy-EvMnIpfL2XO_TmAWgKEKQ8Qw-gaQ/preview")
             setOpen(true)
         }
     }
@@ -100,6 +103,7 @@ const Header = () => {
             <header className="header default">
                 <div className=" left-part">
                     <a className="logo scroll" href="#wrapper">
+                        {/* <img class="logo-icon" src="img/meta/logo.jpg" alt="" /> */}
                         <h2 className="mb-0 uppercase">Meta Scenes</h2>
                     </a>
                 </div>
@@ -115,11 +119,12 @@ const Header = () => {
 
                             <li><a className="scroll list-inline-item" href="#wrapper">Home</a></li>
                             <li><a className="scroll list-inline-item" href="#about">about</a></li>
-                            {/* <li><a className="scroll list-inline-item" href="#discography">Discovery</a></li> */}
-                            <li><a className="scroll list-inline-item" href="#band">Teams</a></li>
                             <li className="dropdown"><a className="scroll list-inline-item" href="#tour">Tours</a>
                             </li>
+                            {/* <li><a className="scroll list-inline-item" href="#discography">Discovery</a></li> */}
+
                             <li><a className="scroll list-inline-item" href="#gallery">Gallery</a></li>
+                            <li><a className="scroll list-inline-item" href="#band">Teams</a></li>
 
                             <li><a className="scroll list-inline-item" href="#contact">Contact</a></li>
                             <li className="block-helper">

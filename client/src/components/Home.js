@@ -9,11 +9,13 @@ import Block from './Body/Blog';
 import Contact from './Body/Contact';
 import Footer from './Footer/Footer';
 import Subscribe from './Footer/Subcribe';
+import ListForm from './ListForm';
 
 const Home = () => {
 
   return (
     <div className="wrapper">
+      {/* <ListForm /> */}
       <BlockSearchForm />
       <Header />
       {/* <Albums /> */}

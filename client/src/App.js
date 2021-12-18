@@ -12,6 +12,7 @@ import Market from './contracts/Market.json'
 import ReactNotification from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import 'react-modal-video/css/modal-video.css';
+import MarketComponent from "./components/market/Market";
 
 const App = () => {
 
@@ -98,6 +99,7 @@ const App = () => {
       <ReactNotification />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/market" element={<MarketComponent />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
