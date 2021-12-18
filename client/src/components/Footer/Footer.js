@@ -12,13 +12,13 @@ const Footer = () => {
                     <div className="col-md-6 text-md-right">
                         <ul className="list-inline small">
                             <li className="list-inline-item">
-                                <a href="#">Privacy Policy</a>
+                                <a href="#">Privacy Policy </a>
                             </li>
                             <li className="list-inline-item">
-                                <a href="#">Terms of Use</a>
+                                <a href="#">Terms of Use </a>
                             </li>
                             <li className="list-inline-item">
-                                <a href="#">About</a>
+                                <a href="#">About </a>
                             </li>
                             <li className="list-inline-item">
                                 <a href="#">Legal</a>

@@ -1,21 +1,16 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Banner from './banner/Banner';
-import Albums from './Body/Albums';
+import React from 'react';
 import AboutUs from './Body/AboutUs';
 import BlockSearchForm from './header/BlockSearchForm';
 import Header from "./header/Header"
-import Discovery from './Body/Discovery';
-import UpComing from './Body/UpComing';
 import Members from './Body/Members';
 import UpComingTour from './Body/UpComingTour';
 import Gallery from './Body/Gallery';
 import Block from './Body/Blog';
 import Contact from './Body/Contact';
 import Footer from './Footer/Footer';
+import Subscribe from './Footer/Subcribe';
 
 const Home = () => {
-  const [user, setUser] = useState("bieneibe")
 
   return (
     <div className="wrapper">
@@ -24,15 +19,15 @@ const Home = () => {
       {/* <Albums /> */}
       <AboutUs />
       <Block />
-      <Discovery />
+      {/* <Discovery /> */}
       <UpComingTour />
       <Gallery />
       {/* <UpComing /> */}
       <Members />
       <Contact />
-
+      <Subscribe />
       <Footer />
-      
+
       <a className="block-top scroll" href="#wrapper">
         <i className="icon-angle-up" /></a>
     </div>

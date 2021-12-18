@@ -12,26 +12,26 @@ const AboutUs = () => {
                 <div className="row  vertical-align">
                     <div className="col-lg-7 col-md-12">
                         <div className="front-p">
-                            <h1 className="uppercase text-white">A different <br />kind of music</h1>
-                            <p className=" w-93">Melbourne is the coastal capital of the southeastern Australian state of Victoria. At the city's centre is the modern Federation Square development, with plazas, bars, and restaurants by the Yarra River. In the Southbank area, the Melbourne Arts Precinct is the site of Arts Centre Melbourne and the National Gallery of Victoria, with Australian and indigenous art.</p>
+                            <h1 className="uppercase text-white">Meta Scenes <br />kind of future</h1>
+                            <h3 className=" w-93">MetaScenes makes the world of Entertainment easier by providing creative and attractive virtual stage. Celebrities, Idols, KOLs, even talent people can organize the concert which connect their fans or communities via metaverse space on real time by their avatar.</h3>
                             
                         </div>
                     </div>
                     <div className="col-lg-5">
                         <div className="row ">
-                            <div className="col-md-4 ">
+                            <div className="col-md-6 ">
                                 <div className="block-content front-p pt-3 pb-3 text-center rounded bg-red mb-4 mb-lg-0">
-                                    <h3 className="uppercase mb-0 font-weight-600">upcoming tour </h3>
-                                    <span className=" p mb-0">Fort Mason Center<br />
-                                        San Fancisco, CA
+                                    <h3 className="uppercase mb-0 font-weight-600">Comming soon </h3>
+                                    <span className=" p mb-0">Decentralized Virtual Network<br />
+                                        Hackathon, VBI
                                     </span>
                                 </div>
                             </div>
-                            <div className="col-md-4">
+                            <div className="col-md-6">
                                 <div className="block-content pt-3 pb-3 text-center rounded bg-dark-blue front-p mb-4 mb-lg-0">
                                     <h3 className="uppercase mb-0 font-weight-600">location </h3>
-                                    <span className=" p mb-0">Sunday to Wednesday
-                                        <br />July 23 to 26, 2017
+                                    <span className=" p mb-0">Saturday to Monday
+                                        <br />Dec 18 to 20, 2021
                                     </span>
                                 </div>
                             </div>

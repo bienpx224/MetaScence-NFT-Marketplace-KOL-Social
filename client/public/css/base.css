@@ -560,6 +560,10 @@ input[type="text"],
     border-color:rgba(255,255,255,.5) !important;
 
 }
+.border-4{
+    border-color:rgba(94, 206, 66, 0.5) !important;
+
+}
 
 .but:hover {
     color: #ffffff;
@@ -605,8 +609,8 @@ section.divider{
 }
 
 section.main{
-    padding-top: 7.42857rem;
-    padding-bottom: 7.42857rem;
+    padding-top: 4.42857rem;
+    padding-bottom: 4.42857rem;
 }
 
 

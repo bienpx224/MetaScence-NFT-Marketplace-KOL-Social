@@ -26,7 +26,7 @@ const Members = () => {
                 <div className="row">
                     <div className="col-md-3 col-lg-3">
                         <div className="block-member">
-                            <img src="https://lh3.googleusercontent.com/proxy/y4eSUMTaSn-o1TzpnAywnbQcJSoUXyCvppvSvZk4EYCEMmYAK2m_Kqf4D2Jbyp047SddSKvOgEZ6Liz0ETsONu8" alt="" />
+                            <img src="img/meta/tiendat.jpg" alt="" />
                             <div className="member-info">
                                 <h6 className="uppercase mb-0 ">Lê Tiến Đạt</h6>
                                 <span className=" mt-0"> Business Management</span>
@@ -35,7 +35,7 @@ const Members = () => {
                     </div>
                     <div className="col-md-3 col-lg-3">
                         <div className="block-member">
-                            <img src="https://lh3.googleusercontent.com/proxy/y4eSUMTaSn-o1TzpnAywnbQcJSoUXyCvppvSvZk4EYCEMmYAK2m_Kqf4D2Jbyp047SddSKvOgEZ6Liz0ETsONu8" alt="" />
+                            <img src="img/meta/xuanbien.jpg" alt="" />
                             <div className="member-info">
                                 <h6 className="uppercase mb-0 ">Phạm Xuân Biển</h6>
                                 <span className=" mt-0"> Software Developer</span>
@@ -44,7 +44,7 @@ const Members = () => {
                     </div>
                     <div className="col-md-3 col-lg-3">
                         <div className="block-member">
-                            <img src="https://lh3.googleusercontent.com/proxy/y4eSUMTaSn-o1TzpnAywnbQcJSoUXyCvppvSvZk4EYCEMmYAK2m_Kqf4D2Jbyp047SddSKvOgEZ6Liz0ETsONu8" alt="" />
+                            <img src="img/meta/minhdan.jpg" alt="" />
                             <div className="member-info">
                                 <h6 className="uppercase mb-0 ">Nguyễn Minh Dân</h6>
                                 <span className=" mt-0"> Software Engineer</span>
@@ -53,19 +53,7 @@ const Members = () => {
                     </div>
                     <div className="col-md-3 col-lg-3">
                         <div className="block-member">
-                            <img src="https://lh3.googleusercontent.com/proxy/y4eSUMTaSn-o1TzpnAywnbQcJSoUXyCvppvSvZk4EYCEMmYAK2m_Kqf4D2Jbyp047SddSKvOgEZ6Liz0ETsONu8" alt="" />
-                            <div className="member-info">
-                                <h6 className="uppercase mb-0 ">Nguyễn Hồng Hải</h6>
-                                <span className=" mt-0"> Game manager</span>
-                                {/* <span className=" mt-0"> Developer Web and Mobile</span> */}
-                            </div>
-                        </div>
-                    </div>
-                    {/*Row*/}{/*Row*/}{/*Row*/}{/*Row*/}{/*Row*/}{/*Row*/}
-                    <div className="col-md-1 col-lg-1"></div>
-                    <div className="col-md-3 col-lg-3">
-                        <div className="block-member">
-                            <img src="https://lh3.googleusercontent.com/proxy/y4eSUMTaSn-o1TzpnAywnbQcJSoUXyCvppvSvZk4EYCEMmYAK2m_Kqf4D2Jbyp047SddSKvOgEZ6Liz0ETsONu8" alt="" />
+                            <img src="img/meta/minhcuong.jpg" alt="" />
                             <div className="member-info">
                                 <h6 className="uppercase mb-0 ">Nguyễn Minh Cường</h6>
                                 <span className=" mt-0"> Software Developer</span>
@@ -73,9 +61,22 @@ const Members = () => {
                             </div>
                         </div>
                     </div>
+                    
+                    {/*Row*/}{/*Row*/}{/*Row*/}{/*Row*/}{/*Row*/}{/*Row*/}
+                    <div className="col-md-1 col-lg-1"></div>
                     <div className="col-md-3 col-lg-3">
                         <div className="block-member">
-                            <img src="https://lh3.googleusercontent.com/proxy/y4eSUMTaSn-o1TzpnAywnbQcJSoUXyCvppvSvZk4EYCEMmYAK2m_Kqf4D2Jbyp047SddSKvOgEZ6Liz0ETsONu8" alt="" />
+                            <img src="img/meta/avatar.png" alt="" />
+                            <div className="member-info">
+                                <h6 className="uppercase mb-0 ">Nguyễn Hồng Hải</h6>
+                                <span className=" mt-0"> Game manager</span>
+                                {/* <span className=" mt-0"> Developer Web and Mobile</span> */}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-3 col-lg-3">
+                        <div className="block-member">
+                            <img src="img/meta/minhhao.jpg" alt="" />
                             <div className="member-info">
                                 <h6 className="uppercase mb-0 ">Lê Minh Hào</h6>
                                 <span className=" mt-0"> Software Developer</span>
@@ -85,7 +86,7 @@ const Members = () => {
                     
                     <div className="col-md-3 col-lg-3">
                         <div className="block-member">
-                            <img src="https://lh3.googleusercontent.com/proxy/y4eSUMTaSn-o1TzpnAywnbQcJSoUXyCvppvSvZk4EYCEMmYAK2m_Kqf4D2Jbyp047SddSKvOgEZ6Liz0ETsONu8" alt="" />
+                            <img src="img/meta/quandoan.jpg" alt="" />
                             <div className="member-info">
                                 <h6 className="uppercase mb-0 ">Đoàn Quân</h6>
                                 <span className=" mt-0"> Web Developer</span>

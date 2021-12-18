@@ -16,6 +16,7 @@ const Navigate = () => {
                         </a>
                     </div>
                     <ul className="main-menu list-inline">
+                        <li><a className="btn-s uppercase btn btn-primary with-ico border-2" href="#"><i className="icon-ticket" />Limited</a></li>
                         <li><a className="scroll list-inline-item" href="#wrapper">Home</a></li>
                         <li><a className="scroll list-inline-item" href="#about">about</a></li>
                         <li><a className="scroll list-inline-item" href="#discography">discography</a></li>

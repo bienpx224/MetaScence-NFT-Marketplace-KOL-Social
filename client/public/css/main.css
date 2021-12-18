@@ -352,6 +352,10 @@ Created by : mutationthemes
      color: #949494;
      
 }
+.header.switched-header .main-nav a {
+    color: #949494;
+    
+}
 
 
  .header.switched-header .block-helper li a {
@@ -603,8 +607,9 @@ Created by : mutationthemes
 /* End audio player*/
 /* Band members section*/
  .block-member{
-     min-height: 250px;
+     min-height: 312px;
      position: relative;
+     margin-bottom:20px;
 }
  .block-member .member-info{
      position: absolute;
