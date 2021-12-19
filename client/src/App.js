@@ -56,7 +56,6 @@ const App = () => {
 
   async function connectMetamask() {
     const web3 = await getWeb3();
-    window.ethereum.enable();
     dispatch(web3_connect({ web3 }))
 
     const accounts = await web3.eth.getAccounts();

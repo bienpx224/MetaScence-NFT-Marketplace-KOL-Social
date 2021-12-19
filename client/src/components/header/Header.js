@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ModalVideo from 'react-modal-video'
-import getWeb3 from '../../utils/getWeb3';
-import { web3_connect } from '../../store/actions/indexAction';
 import { checkValidNetwork } from '../../utils/listenChangeMetamask';
+import { showNotification } from '../../utils/util';
 
 const Header = () => {
     const dispatch = useDispatch()
@@ -15,18 +14,22 @@ const Header = () => {
         web3: state.rootReducer.web3
     }))
     const connectMetamask = async () => {
-
-        const accounts = await web3.eth.getAccounts();
-        const _networkId = await web3.eth.net.getId() + '';
-        checkValidNetwork(accounts, _networkId, dispatch)
+        if(web3){
+            const accounts = await web3.eth.getAccounts();
+            const _networkId = await web3.eth.net.getId() + '';
+            checkValidNetwork(accounts, _networkId, dispatch)
+        }else{
+            showNotification("warning", "Opps!", "Your browser don't support Metamask")
+        }
     }
+
     const checkWallet = () => {
         if (isLogin) {
-            return <a className="scroll btn-s uppercase btn btn-primary with-ico border-4" href="#">Your wallet:<i className="scroll icon-ticket" />{account}</a>
+            return <a onClick={() => connectMetamask()} className="scroll btn-s uppercase btn btn-primary with-ico border-4" >Your wallet:<i className="scroll icon-ticket" />{account}</a>
 
         } else {
 
-            return <a onClick={() => connectMetamask()} className="scroll btn-s uppercase btn btn-primary with-ico border-2" href="#"><i className="scroll icon-ticket" />Connect metamask</a>
+            return <a onClick={() => connectMetamask()} className="scroll btn-s uppercase btn btn-primary with-ico border-2" ><i className="scroll icon-ticket" />Connect metamask</a>
         }
 
     }

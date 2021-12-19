@@ -73,22 +73,22 @@ const UpComingTour = () => {
     }
   }
   const ticket1 = () => {
-    if (listTicket && listTicket[1]) {
-      if (listTicket[1].seller != account && balance && balance == 0) {
-        let priceEth = web3.utils.fromWei(listTicket[1].price.toString(), "Ether")
+    if (listTicket && listTicket[0]) {
+      if (listTicket[0].seller != account && balance && balance == 0) {
+        let priceEth = web3.utils.fromWei(listTicket[0].price.toString(), "Ether")
         return (
           <div className="col-12 col-lg-5 col-md-5 text-md-right">
             <a className="btn-s uppercase btn btn-primary with-ico border-4"
-              onClick={() => { onClickBuy(listTicket[1].tokenId, listTicket[1].price) }}><i className="icon-ticket" />{priceEth} ETH</a>
+              onClick={() => { onClickBuy(listTicket[0].tokenId, listTicket[0].price) }}><i className="icon-ticket" />{priceEth} ETH</a>
             <a className="btn-s uppercase btn btn-primary with-ico"
-              onClick={() => { onClickBuy(listTicket[1].tokenId, listTicket[1].price) }}><i className="icon-cart" />Buy Ticket</a>
+              onClick={() => { onClickBuy(listTicket[0].tokenId, listTicket[0].price) }}><i className="icon-cart" />Buy Ticket</a>
           </div>
 
         )
       } else {
         return (
           <div className="col-12 col-lg-5 col-md-5 text-md-right">
-            <a className="btn-s uppercase btn btn-primary with-ico border-2" href="#"><i className="icon-ticket" />Owned {balance} Ticket</a>
+            <a className="btn-s uppercase btn btn-primary with-ico border-2"><i className="icon-ticket" />Owned {balance} Ticket</a>
             <a className="btn-s uppercase btn btn-primary with-ico" ><i className="icon-cd-2" />Comming soon</a>
           </div>
         )
@@ -96,8 +96,8 @@ const UpComingTour = () => {
     } else {
       return (
         <div className="col-12 col-lg-5 col-md-5 text-md-right">
-          <a className="btn-s uppercase btn btn-primary with-ico border-4" href="#"><i className="icon-ticket" /></a>
-          <a className="btn-s uppercase btn btn-primary with-ico" ><i className="icon-shop" />Sale Ticket Soon</a>
+          <a className="btn-s uppercase btn btn-primary with-ico border-2" ><i className="icon-ticket" />Sold out</a>
+          <a className="btn-s uppercase btn btn-primary with-ico" ><i className="icon-shop" />Comming Soon</a>
         </div>
       )
     }
@@ -135,12 +135,12 @@ const UpComingTour = () => {
               <li className="active ">
                 <div className="block-content text-center">
                   <div className="block-video">
-                    <img src="img/8.jpg" className="background-img mb-0" alt="" />
+                    <img src="img/meta/upcoming.png" className="background-img mb-0" alt="" />
                     <a className="video-play-but popup-youtube" onClick={() => setOpen(true)} />
                     <div className="embed-responsive embed-responsive-16by9">
                     </div>
                   </div>
-                  <p className=" mt-3"><span className="opc-70">The Big Tour 2021 -</span> <a className="link" href="#"> Ready for all</a> </p>
+                  <p className=" mt-3"><span className="opc-70">The Big Tour 2022 -</span> <a className="link" href="#"> Ready for all</a> </p>
                 </div>
                 <div className="block-content gap-one-top-sm text-left">
                   <div className="block-content ">
@@ -149,7 +149,7 @@ const UpComingTour = () => {
                         <h4 className="switch-fot">14 Mar</h4>
                       </div>
                       <div className="col-lg-4 col-md-4">
-                        <h6 className="mb-0 opc-70 uppercase">On Mars</h6>
+                        <h6 className="mb-0 opc-70 uppercase">Washington DC, American </h6>
                         <span>Taylor Swift </span>
                       </div>
                       {ticket1()}
