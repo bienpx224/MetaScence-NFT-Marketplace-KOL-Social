@@ -5,8 +5,9 @@ const initialState = {
   account: null,
   networkId: null,
   balance: null,
-  contract: null,
-  contract_infura: null
+  contract_nft: null,
+  contract_market: null,
+  contract_infura_market: null
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -25,17 +26,23 @@ const rootReducer = (state = initialState, action) => {
         networkId: action.data.networkId,
         isLogin: action.data.isLogin
       }
-    case 'INIT_CONTRACT':
+    case 'INIT_CONTRACT_NFT':
       window.state = {...state,action}
       return {
         ...state,
-        contract: action.data.contract
+        contract_nft: action.data.contract_nft,
       };
-    case 'INIT_CONTRACT_INFURA':
+      case 'INIT_CONTRACT_MARKET':
+        window.state = {...state,action}
+        return {
+          ...state,
+          contract_market: action.data.contract_market
+        };
+    case 'INIT_CONTRACT_INFURA_MARKET':
       window.state = {...state,action}
       return {
         ...state,
-        contract_infura: action.data.contract_infura
+        contract_infura_market: action.data.contract_infura_market
       };
     case 'GET_BALANCE':
       return {

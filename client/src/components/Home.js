@@ -1,20 +1,40 @@
-import React, {useState} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Banner from './banner/Banner';
+import React from 'react';
+import AboutUs from './Body/AboutUs';
+import BlockSearchForm from './header/BlockSearchForm';
 import Header from "./header/Header"
+import Members from './Body/Members';
+import UpComingTour from './Body/UpComingTour';
+import Gallery from './Body/Gallery';
+import Block from './Body/Blog';
+import Contact from './Body/Contact';
+import Footer from './Footer/Footer';
+import Subscribe from './Footer/Subcribe';
+import ListForm from './ListForm';
 
-const Home  = ()=>{
-    const [user, setUser] = useState("bieneibe")
+const Home = () => {
 
+  return (
+    <div className="wrapper">
+      {/* <ListForm /> */}
+      <BlockSearchForm />
+      <Header />
+      {/* <Albums /> */}
+      <AboutUs />
+      <Block />
+      {/* <Discovery /> */}
+      <UpComingTour />
+      <Gallery />
+      {/* <UpComing /> */}
+      <Members />
+      <Contact />
+      <Subscribe />
+      <Footer />
 
-    // Component Did Mount 
+      <a className="block-top scroll" href="#wrapper">
+        <i className="icon-angle-up" /></a>
+    </div>
+  )
 
-    return(
-        <div>
-            <Header />
-        </div>
-    )
-  
 }
 
 export default React.memo(Home);  // Sử dụng memo khi mà trang thường xuyên bị re-render những thành phần ko cần thiết.

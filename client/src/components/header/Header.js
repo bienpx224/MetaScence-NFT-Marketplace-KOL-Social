@@ -1,61 +1,144 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import NewAlbums from "../Body/NewAlbums"
-import AboutUs from '../Body/AboutUs';
-import Navigate from './Navigate';
+import ModalVideo from 'react-modal-video'
+import { checkValidNetwork } from '../../utils/listenChangeMetamask';
+import { showNotification } from '../../utils/util';
 
 const Header = () => {
+    const dispatch = useDispatch()
+    const [isOpen, setOpen] = useState(false)
+    const [urlVideo, setUrlVideo] = useState("img/video/video11.mp4")
+    const { account, isLogin, web3 } = useSelector((state) => ({
+        account: state.rootReducer.account,
+        isLogin: state.rootReducer.isLogin,
+        web3: state.rootReducer.web3
+    }))
+    const connectMetamask = async () => {
+        if(web3){
+            const accounts = await web3.eth.getAccounts();
+            const _networkId = await web3.eth.net.getId() + '';
+            checkValidNetwork(accounts, _networkId, dispatch)
+        }else{
+            showNotification("warning", "Opps!", "Your browser don't support Metamask")
+        }
+    }
 
+    const checkWallet = () => {
+        if (isLogin) {
+            return <a onClick={() => connectMetamask()} className="scroll btn-s uppercase btn btn-primary with-ico border-4" >Your wallet:<i className="scroll icon-ticket" />{account}</a>
+
+        } else {
+
+            return <a onClick={() => connectMetamask()} className="scroll btn-s uppercase btn btn-primary with-ico border-2" ><i className="scroll icon-ticket" />Connect metamask</a>
+        }
+
+    }
+    const setOpenVideo = (index)=>{
+        if(index == 1){
+            //https://drive.google.com/file/d/16voR5binSgDcEAXhfSZXfbI94pPSHkaQ/view
+            setUrlVideo("img/video/video11.mp4")
+            // setUrlVideo("https://drive.google.com/file/d/16voR5binSgDcEAXhfSZXfbI94pPSHkaQ/preview")
+            setOpen(true)
+        }else{
+            setUrlVideo("img/video/video22.mp4")
+            // setUrlVideo("https://drive.google.com/file/d/1oHy-EvMnIpfL2XO_TmAWgKEKQ8Qw-gaQ/preview")
+            setOpen(true)
+        }
+    }
     return (
-        <div>
-            <Navigate />
+        <section className="hero">
+            {/*Main slider*/}
+            <ModalVideo channel='custom' autoplay isOpen={isOpen} url={urlVideo}
+                onClose={() => setOpen(false)} />
+            <div className="main-slider slider flexslider">
+                <ul className="slides">
+                    <li>
+                        <div className="background-img overlay zoom">
+                            <img src="img/meta/slider0.jpg" alt="" />
+                        </div>
+                        {/*Container*/}
+                        <div className="container hero-content">
+                            {/*Row*/}
+                            <div className="row">
+                                <div className="col-sm-12 text-center">
+                                    {/*Inner hero*/}
+                                    <div className="inner-hero">
+                                        {/* <div className="back-rect" /> */}
+                                        <h1 className="large text-white uppercase mb-0">Welcome to MetaScenes</h1>
+                                        <h5 className="mb-0 text-white uppercase">Bring the Real Scenes into Virtual Scenes</h5>
+                                        <a onClick={() => setOpenVideo(1)} className="video-play-but popup-youtube" />
 
-            <section className="hero__section set-bg" data-setbg="img/hero-bg.png" style={{ backgroundImage: 'url("img/hero-bg.png")' }}>
-                <div className="container text-white">
-                    <div className="hero__slider owl-carousel owl-loaded owl-drag">
-                        <div className="owl-stage-outer"><div className="owl-stage" style={{ transform: 'translate3d(-1500px, 0px, 0px)', transition: 'all 1.2s ease 0s', width: '4500px' }}><div className="owl-item cloned" style={{ width: '750px' }}><div className="hero__items">
-                            <span>The electro vibe</span>
-                            <h2>Tailor Lachiri</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua accumsan lacus vel facilisis. </p>
-                            <a href="#" className="site__btn">Buy tickets</a>
-                        </div></div><div className="owl-item cloned" style={{ width: '750px' }}><div className="hero__items">
-                            <span>The electro vibe</span>
-                            <h2>Tailor Lachiri</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua accumsan lacus vel facilisis. </p>
-                            <a href="#" className="site__btn">Buy tickets</a>
-                        </div></div><div className="owl-item active" style={{ width: '750px' }}><div className="hero__items">
-                            <span>The electro vibe</span>
-                            <h2>Tailor Lachiri</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua accumsan lacus vel facilisis. </p>
-                            <a href="#" className="site__btn">Buy tickets</a>
-                        </div></div><div className="owl-item" style={{ width: '750px' }}><div className="hero__items">
-                            <span>The electro vibe</span>
-                            <h2>Tailor Lachiri</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua accumsan lacus vel facilisis. </p>
-                            <a href="#" className="site__btn">Buy tickets</a>
-                        </div></div><div className="owl-item cloned" style={{ width: '750px' }}><div className="hero__items">
-                            <span>The electro vibe</span>
-                            <h2>Tailor Lachiri</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua accumsan lacus vel facilisis. </p>
-                            <a href="#" className="site__btn">Buy tickets</a>
-                        </div></div><div className="owl-item cloned" style={{ width: '750px' }}><div className="hero__items">
-                            <span>The electro vibe</span>
-                            <h2>Tailor Lachiri</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua accumsan lacus vel facilisis. </p>
-                            <a href="#" className="site__btn">Buy tickets</a>
-                        </div></div></div></div><div className="owl-nav"><button type="button" role="presentation" className="owl-prev"><i className="fa fa-angle-left" /></button><button type="button" role="presentation" className="owl-next"><i className="fa fa-angle-right" /></button></div><div className="owl-dots disabled" /></div>
+                                        {/* <div className="front-rect" /> */}
+                                    </div>
+                                </div>
+                                {/*End row*/}
+                            </div>
+                            {/*End container*/}
+                        </div>
+                        {/*End inner hero*/}
+                    </li>
+                    <li>
+                        <div className="background-img overlay zoom">
+                            <img src="img/meta/slider1.png" alt="" />
+                        </div>
+                        {/*Container*/}
+                        <div className="container hero-content">
+                            {/*Row*/}
+                            <div className="row">
+                                <div className="col-sm-12 text-center">
+                                    {/*Inner hero*/}
+                                    <div className="inner-hero">
+                                        <h1 className="large text-white uppercase mb-0">Connect the world into your eyes</h1>
+                                        <h5 className="mb-0 text-white uppercase">MetaScenes is a decentralized virtual scene built on the blockchain</h5>
+                                        <a className="video-play-but popup-youtube" onClick={() => setOpenVideo(2)} />
+                                    </div>
+                                </div>
+                                {/*End row*/}
+                            </div>
+                            {/*End container*/}
+                        </div>
+                        {/*End inner hero*/}
+                    </li>
+                </ul>
+            </div>
+            {/*End main slider*/}
+            {/*Header*/}
+            <header className="header default">
+                <div className=" left-part">
+                    <a className="logo scroll" href="#wrapper">
+                        {/* <img class="logo-icon" src="img/meta/logo.jpg" alt="" /> */}
+                        <h2 className="mb-0 uppercase">Meta Scenes</h2>
+                    </a>
                 </div>
-            </section>
+                <div className="right-part">
+                    <nav className="main-nav">
+                        <div className="toggle-mobile-but">
+                            <a href="#" className="mobile-but">
+                                <div className="lines" />
+                            </a>
+                        </div>
+                        <ul className="main-menu list-inline">
+                            {checkWallet()}
 
-            <section className="about__section">
-                
-                <AboutUs />
+                            <li><a className="scroll list-inline-item" href="#wrapper">Home</a></li>
+                            <li><a className="scroll list-inline-item" href="#about">about</a></li>
+                            <li className="dropdown"><a className="scroll list-inline-item" href="#tour">Tours</a>
+                            </li>
+                            {/* <li><a className="scroll list-inline-item" href="#discography">Discovery</a></li> */}
 
-                <NewAlbums />
+                            <li><a className="scroll list-inline-item" href="#gallery">Gallery</a></li>
+                            <li><a className="scroll list-inline-item" href="#band">Teams</a></li>
 
-            </section>
-
-        </div>
+                            <li><a className="scroll list-inline-item" href="#contact">Contact</a></li>
+                            <li className="block-helper">
+                                <span className="icon search-ico"><i className="icon-search" /></span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            {/*End header*/}
+        </section>
     )
 
 }
