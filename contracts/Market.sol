@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.10;
 
-import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
+import "./@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
 contract Market{
     enum ListingStatus {
@@ -9,12 +9,13 @@ contract Market{
         Sold,
         Cancelled
     }
+    //. 20000000000000000
     struct Listing{
         ListingStatus status;
         address seller;
         address token;
         uint tokenId;
-        uint price;
+        uint256 price;
     }
 
     event Listed(uint listingId, address seller, address token, uint tokenId, uint price);
@@ -24,7 +25,7 @@ contract Market{
     uint private _listingId = 0;
     mapping(uint => Listing) private _listings;
 
-    function listToken(address token, uint tokenId, uint price) external {
+    function listToken(address token, uint tokenId, uint256 price) external {
         IERC721(token).transferFrom(msg.sender, address(this), tokenId);
         Listing memory listing = Listing(
             ListingStatus.Active,
