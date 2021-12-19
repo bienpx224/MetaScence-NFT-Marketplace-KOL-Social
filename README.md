@@ -19,10 +19,11 @@ MetaScenes makes the world of Entertainment easier by providing creative and att
 - Reach more than million fans a time
 - Optimize benefits
 
-2. Celebrities - Idols :
-- Saving concert organization cost
-- Reach more than million fans a time
-- Optimize benefits
+2. Fans - Communities: :
+- Easy to join concert
+- Low ticket price
+- Get ticket change if cannot join whole concert
+- Get NFT give away
 
 <hr />
 
