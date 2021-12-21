@@ -20,17 +20,27 @@ const UpComingTour = () => {
 
   useEffect(() => {
     if (contract_market) {
-      contract_market.methods.getArrListing().call({ from: account })
+      contract_market.methods.MgetArrListing().call({ from: account })
         .then((data) => {
-          console.log(data)
-          let data2 = [];
-          for(var i=0; i<= data.length -1 ; i++){
-            if(data[i].seller != "0x0000000000000000000000000000000000000000"){
-                data2.push(data[i])
+          var data2 = []
+          let dataArrId = []
+          for (var i = 0; i <= data.length - 1; i++) {
+            if (data[i].seller != "0x0000000000000000000000000000000000000000") {
+              data2.push(data[i])
+              dataArrId.push(data[i].tokenId)
             }
           }
-          console.log(data2)
-          setListTicket(data2)
+          contract_market.methods.getTokensById(dataArrId).call({ from: account })
+            .then((arrTicket) => {
+              arrTicket.forEach(ticket => {
+                for (var i = 0; i <= data2.length - 1; i++) {
+                  if (data2[i].tokenId == ticket.tokenId) {
+                    data2[i] = { ...data2[i], ticket }
+                  }
+                }
+              });
+              setListTicket(data2)
+            })
         })
     } else {
 
@@ -38,17 +48,17 @@ const UpComingTour = () => {
 
   }, [contract_market, balance])
 
-  const buySuccess = ()=>{
-    dispatch(get_balance({balance: balance+1}))
+  const buySuccess = () => {
+    dispatch(get_balance({ balance: balance + 1 }))
   }
 
-  const onClickBuy = async (tokenId, price) => {
+  const onClickBuy = async (listingId, price) => {
     if (isLogin) {
       if (contract_market && contract_nft) {
         showNotification("info", "Processing", "Waiting confirm transaction")
         // var priceToWei = web3.utils.toWei(price.toString(), "Ether");
         // console.log(priceToWei)
-        contract_market.methods.buyToken(tokenId).send({ from: account, value: price })
+        contract_market.methods.MbuyToken(listingId).send({ from: account, value: price })
           .on('transactionHash', function (hash) {
             console.log("transactionHash")
           })
@@ -79,9 +89,9 @@ const UpComingTour = () => {
         return (
           <div className="col-12 col-lg-5 col-md-5 text-md-right">
             <a className="btn-s uppercase btn btn-primary with-ico border-4"
-              onClick={() => { onClickBuy(listTicket[0].tokenId, listTicket[0].price) }}><i className="icon-ticket" />{priceEth} ETH</a>
+              onClick={() => { onClickBuy(listTicket[0].listingId, listTicket[0].price) }}><i className="icon-ticket" />{priceEth} ETH</a>
             <a className="btn-s uppercase btn btn-primary with-ico"
-              onClick={() => { onClickBuy(listTicket[0].tokenId, listTicket[0].price) }}><i className="icon-cart" />Buy Ticket</a>
+              onClick={() => { onClickBuy(listTicket[0].listingId, listTicket[0].price) }}><i className="icon-cart" />Buy Ticket</a>
           </div>
 
         )
@@ -146,11 +156,11 @@ const UpComingTour = () => {
                   <div className="block-content ">
                     <div className="row">
                       <div className="col-lg-3 col-md-3">
-                        <h4 className="switch-fot">14 Mar</h4>
+                        <h4 className="switch-fot">{listTicket && listTicket[0].ticket.time}</h4>
                       </div>
                       <div className="col-lg-4 col-md-4">
-                        <h6 className="mb-0 opc-70 uppercase">Washington DC, American </h6>
-                        <span>Taylor Swift </span>
+                        <h6 className="mb-0 opc-70 uppercase">{listTicket && listTicket[0].ticket.place} </h6>
+                        <span>{listTicket && listTicket[0].ticket.singer} </span>
                       </div>
                       {ticket1()}
                     </div>

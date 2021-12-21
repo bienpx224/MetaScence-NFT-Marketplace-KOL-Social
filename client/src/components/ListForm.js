@@ -29,7 +29,7 @@ export function ListForm() {
             console.log("handle List :"+tokenId + " && "+amount)
             var price = web3.utils.toWei(amount.toString(), "Ether");
             console.log(price)
-            contract_market.methods.listToken(contract_nft._address, tokenId, price).call()
+            contract_market.methods.MlistToken(tokenId, price).call()
             .then( (rs)=>{
                 console.log(rs)
             })

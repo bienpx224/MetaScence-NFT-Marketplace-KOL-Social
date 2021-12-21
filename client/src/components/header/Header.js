@@ -3,36 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import ModalVideo from 'react-modal-video'
 import { checkValidNetwork } from '../../utils/listenChangeMetamask';
 import { showNotification } from '../../utils/util';
+import Navigate from './Navigate';
 
 const Header = () => {
-    const dispatch = useDispatch()
     const [isOpen, setOpen] = useState(false)
     const [urlVideo, setUrlVideo] = useState("img/video/video11.mp4")
-    const { account, isLogin, web3 } = useSelector((state) => ({
-        account: state.rootReducer.account,
-        isLogin: state.rootReducer.isLogin,
-        web3: state.rootReducer.web3
-    }))
-    const connectMetamask = async () => {
-        if(web3){
-            const accounts = await web3.eth.getAccounts();
-            const _networkId = await web3.eth.net.getId() + '';
-            checkValidNetwork(accounts, _networkId, dispatch)
-        }else{
-            showNotification("warning", "Opps!", "Your browser don't support Metamask")
-        }
-    }
-
-    const checkWallet = () => {
-        if (isLogin) {
-            return <a onClick={() => connectMetamask()} className="scroll btn-s uppercase btn btn-primary with-ico border-4" >Your wallet:<i className="scroll icon-ticket" />{account}</a>
-
-        } else {
-
-            return <a onClick={() => connectMetamask()} className="scroll btn-s uppercase btn btn-primary with-ico border-2" ><i className="scroll icon-ticket" />Connect metamask</a>
-        }
-
-    }
     const setOpenVideo = (index)=>{
         if(index == 1){
             //https://drive.google.com/file/d/16voR5binSgDcEAXhfSZXfbI94pPSHkaQ/view
@@ -103,40 +78,7 @@ const Header = () => {
             </div>
             {/*End main slider*/}
             {/*Header*/}
-            <header className="header default">
-                <div className=" left-part">
-                    <a className="logo scroll" href="#wrapper">
-                        {/* <img class="logo-icon" src="img/meta/logo.jpg" alt="" /> */}
-                        <h2 className="mb-0 uppercase">Meta Scenes</h2>
-                    </a>
-                </div>
-                <div className="right-part">
-                    <nav className="main-nav">
-                        <div className="toggle-mobile-but">
-                            <a href="#" className="mobile-but">
-                                <div className="lines" />
-                            </a>
-                        </div>
-                        <ul className="main-menu list-inline">
-                            {checkWallet()}
-
-                            <li><a className="scroll list-inline-item" href="#wrapper">Home</a></li>
-                            <li><a className="scroll list-inline-item" href="#about">about</a></li>
-                            <li className="dropdown"><a className="scroll list-inline-item" href="#tour">Tours</a>
-                            </li>
-                            {/* <li><a className="scroll list-inline-item" href="#discography">Discovery</a></li> */}
-
-                            <li><a className="scroll list-inline-item" href="#gallery">Gallery</a></li>
-                            <li><a className="scroll list-inline-item" href="#band">Teams</a></li>
-
-                            <li><a className="scroll list-inline-item" href="#contact">Contact</a></li>
-                            <li className="block-helper">
-                                <span className="icon search-ico"><i className="icon-search" /></span>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
+            <Navigate />
             {/*End header*/}
         </section>
     )

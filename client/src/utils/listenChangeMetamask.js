@@ -106,7 +106,7 @@ export function checkValidNetwork(accounts, networkId, dispatch) {
     if (accounts && accounts[0]) {
       let account = accounts[0];
       dispatch(metamask_connect({ account, networkId, isLogin: true }))
-      showNotification("success", "Login success", "" + account)
+      // showNotification("success", "Login success", "" + account)
       return true;
     }
     else {
