@@ -43,11 +43,29 @@ const ListTicketActive = () => {
     }, [isLogin, contract_market])
 
     const showTicket = () => {
-        if (listTicket && listTicket[0]) {
+        if (listTicket && listTicket[0] && listTicket[0].ticket) {
             let groupTicket = [];
+            groupTicket.t = []
+            var groupId = [];
             
-            return listTicket.map( (e,key)=>{
-                return <Ticket type="1" key={key} t={e}/>
+            for(var i=0; i<= listTicket.length-1; i++){
+                var id = listTicket[i].ticket.groupId
+                var ticket = listTicket[i]
+                if(groupId.includes(id)){
+                    var index = groupId.indexOf(id)
+                    groupTicket[index] = {...groupTicket[index], groupId: groupId[index] }
+                    groupTicket[index].data.push(ticket);          
+                }else{
+                    groupId.push(id)
+                    var index = groupId.indexOf(id)
+                    groupTicket[index] = {...groupTicket[index], groupId: groupId[index], data:[] }
+                    groupTicket[index].data.push(ticket);
+                }
+            }
+            console.log(groupTicket)
+            
+            return groupTicket.map( (e,key)=>{
+                return <Ticket type="1" key={key} groupId={e.groupId} amount={e.data.length} t={e.data[0]}/>
             })
         }
     }

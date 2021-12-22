@@ -3,8 +3,10 @@ import { useSelector } from 'react-redux';
 import { showNotification } from '../../utils/util';
 
 const Ticket = (props) => {
+    var img_justin = "https://d35kvm5iuwjt9t.cloudfront.net/dbimages/sfx268018.jpg"
+    var img_taylor = "https://www.levisstadium.com/wp-content/uploads/2014/11/TSwiftSmall-11-03-14.jpg"
+    var selena = "https://s1.ticketm.net/dam/a/a06/c2793789-732b-48ac-ae56-0fd8e6cbda06_1525961_TABLET_LANDSCAPE_LARGE_16_9.jpg"
     useEffect(() => {
-        console.log(props)
     })
     const { contract_market, contract_nft, account, isLogin, balance, web3 } = useSelector((state) => ({
         contract_market: state.rootReducer.contract_market,
@@ -159,7 +161,7 @@ const Ticket = (props) => {
             <div className="block-member" style={{ minHeight: "260px" }}>
                 <img src={props.t.ticket.img} alt="" />
                 <div className="member-info" style={{ backgroundColor: "#4252a980" }}>
-                    <h6 className="uppercase mb-0 ">{props.t.ticket.singer} - No: {props.t.ticket.tokenId}</h6>
+                    <h6 className="uppercase mb-0 ">{props.t.ticket.singer} - Left: {props.amount}</h6>
                     <span className=" mt-0"> {props.t.ticket.place}  </span><br></br>
                     <span className=" mt-0">  {props.t.ticket.time} </span>
                     {showButtonBuy()}

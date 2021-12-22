@@ -1,145 +1,92 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.10;
 
-import "./NFT.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract Market is NFT{
-    enum ListingStatus {
-        Active,
-        Sold,
-        Cancelled
+contract NFT is ERC721 {
+    address admin;
+    constructor() ERC721("MetaTicket", "MTicket"){
+        admin = msg.sender;
     }
-    //. 2000000000000000
-    struct Listing{
-        ListingStatus status;
-        uint listingId;
-        address seller;
-        address token;
+
+    struct Token{
+        uint groupId;
         uint tokenId;
-        uint256 price;
+        string name;
+        string singer;
+        string place;
+        string time;
+        string img;
+        address mintedBy;
+        address currentOwner;
+        address previousOwner;
+    }
+    string private constant IMAGE = "https://www.levisstadium.com/wp-content/uploads/2014/11/TSwiftSmall-11-03-14.jpg";
+    uint private _tokenId = 0;
+    uint private _groupId = 0;
+
+    mapping(uint => Token) tokens;
+    mapping(address => mapping(uint=>Token)) ownerToTokens;
+
+    function getOwner() external view returns(address){
+        return admin;
     }
 
-    event Listed(uint listingId, address seller, address token, uint tokenId, uint price);
-    event Sale(uint listingId, address buyer, address token, uint tokenId, uint price);
-    event Cancel(uint listingId, address seller);
-
-    uint private _listingId = 1;
-    mapping(uint => Listing) private _listings;
-
-    function MlistToken( uint tokenId, uint256 price) external {
-        transferFrom(msg.sender, address(this), tokenId);
-        Listing memory listing = Listing(
-            ListingStatus.Active,
-            _listingId,
-            msg.sender,
-            address(this), 
-            tokenId,
-            price
-        );
-
-
-        _listings[_listingId] = listing;
-
-        _listingId++;
-
-        emit Listed(_listingId, msg.sender, address(this), tokenId, price);
-    }
-
-    function MlistTokenOnePrice( uint[] memory _listTokenId, uint price) external {
-        for(uint i=0; i<= _listTokenId.length-1; i++){
-            transferFrom(msg.sender, address(this), _listTokenId[i]);
-            Listing memory listing = Listing(
-                ListingStatus.Active,
-                _listingId,
+    function mint(address _owner, string memory name, string memory singer, string memory place, string memory time, string memory img, uint32 amount) external {
+        require(amount > 0, "Amount not equal 0");
+        require(amount < 10000, "Amount not greater than 10000");
+        require(msg.sender == admin);
+        _groupId++;
+        for(uint32 i = 0; i<= amount-1; i++){
+            _tokenId++;
+            Token memory token = Token(
+                _groupId,
+                _tokenId,
+                name,
+                singer,
+                place,
+                time,
+                img,
                 msg.sender,
-                address(this), 
-                 _listTokenId[i],
-                price
+                msg.sender,
+                address(0)
             );
-            _listings[_listingId] = listing;
-            _listingId++;
-
-            emit Listed(_listingId, msg.sender, address(this), _listTokenId[i], price);
+            tokens[_tokenId] = token;
+            ownerToTokens[msg.sender][_tokenId] = token;
+            _mint(_owner, _tokenId);
         }
-        
+        setApprovalForAll(address(this), true);
     }
 
-    function MgetListing(uint listingId) external view returns(Listing memory){
-        return _listings[listingId];
+    function getNumberTokens() external view returns(uint ){
+        return _tokenId;
     }
 
-    function MgetAmoutListing() external view returns(uint ){
-        return _listingId;
+    function getTokenById(uint id) external view returns(Token memory){
+        return tokens[id];
     }
 
-    function MbuyToken(uint listingId) external payable{
-        Listing storage listing = _listings[listingId];
-
-        require(msg.sender != listing.seller, "Seller cannot be buyer");
-        require(listing.status == ListingStatus.Active, "Listing is not active");
-
-        require(msg.value >= listing.price, "Insufficient paymen");
-
-        listing.status = ListingStatus.Sold;
-
-        IERC721(listing.token).transferFrom(address(this), msg.sender, listing.tokenId);
-        
-        payable(listing.seller).transfer(listing.price);
-        
-        Token memory token = tokens[listing.tokenId];
-        token.currentOwner = msg.sender;
-        token.previousOwner = listing.seller;
-        ownerToTokens[msg.sender][listing.tokenId] = token;
-        delete ownerToTokens[listing.seller][listing.tokenId];
-
-        emit Sale(listingId, msg.sender, listing.token, listing.tokenId, listing.price);
-
-    }
-
-    function Mcancel(uint listingId) external {
-        Listing storage listing = _listings[listingId];
-
-        require(msg.sender == listing.seller, "only seller can cancel listing");
-        require(listing.status == ListingStatus.Active, "Listing is not active");
-
-        listing.status = ListingStatus.Cancelled;
-
-        IERC721(listing.token).transferFrom(address(this), msg.sender, listing.tokenId);
-        
-        emit Cancel(listingId, msg.sender);
-    }
-
-    function MgetArrListing() external view returns(Listing[] memory ){
-        Listing[] memory result = new Listing[](_listingId);
+    function getTokensOwner() external view returns(Token[] memory ){
+        uint length = _tokenId;
+        Token[] memory listToken = new Token[](length);
         uint counter = 0;
-        for(uint i=0; i < _listingId; i++){
-            if(_listings[i].status == ListingStatus.Active && _listings[i].seller != address(0)){
-                result[counter] = _listings[i];
-                counter++;
+        for(uint i=0; i < length; i++){
+            if(ownerToTokens[msg.sender][i].currentOwner == msg.sender){
+                listToken[counter] = ownerToTokens[msg.sender][i];
+                counter ++;
             }
         }
-        return result;
+        return listToken;
     }
-    function MgetArrListingOwner() external view returns(Listing[] memory ){
-        Listing[] memory result = new Listing[](_listingId);
+
+    function getTokensById(uint[] memory _arrId) external view returns(Token[] memory){
+        Token[] memory rs = new Token[](_arrId.length);
         uint counter = 0;
-        for(uint i=0; i < _listingId; i++){
-            if(_listings[i].status == ListingStatus.Active && _listings[i].seller == msg.sender){
-                result[counter] = _listings[i];
-                counter++;
-            }
+        for(uint i=0; i<= _arrId.length-1; i++){
+            rs[counter] = (tokens[_arrId[i]]);
+            counter ++ ;
         }
-        return result;
+        return rs;
     }
-    function MgetArrListingAll() external view returns(uint[] memory ){
-        uint[] memory result = new uint[](_listingId);
-        uint counter = 0;
-        for(uint i=0; i < _listingId; i++){
-            if( _listings[i].seller != address(0)){
-                result[counter] = i;
-                counter++;
-            }
-        }
-        return result;
-    }
+
 }
