@@ -11,7 +11,7 @@ export function showNotification(type, title, message){
         message,
         type,
         insert: "top",
-        container: "top-right",
+        container: "top-left",
         animationIn: ["animate__animated", "animate__fadeIn"],
         animationOut: ["animate__animated", "animate__fadeOut"],
         dismiss: {

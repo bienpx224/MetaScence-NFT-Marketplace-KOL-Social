@@ -13,6 +13,7 @@ import ReactNotification from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
 import 'react-modal-video/css/modal-video.css';
 import MarketComponent from "./components/market/Market";
+import ListTicketOwned from "./components/market/ListTicketOwned";
 
 const App = () => {
 
@@ -31,10 +32,9 @@ const App = () => {
 
   useEffect(() => {
     console.warn = () => { };
+    // console.log = () => { };
     if (isLogin == false) {
     } else {
-      console.log("Account: " + account)
-      console.log("networkId: " + networkId)
       if (contract_nft) {
 
         // get balanceOf
@@ -99,6 +99,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/market" element={<MarketComponent />} />
+        <Route path="/nft" element={<ListTicketOwned />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
