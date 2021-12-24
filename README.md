@@ -19,10 +19,12 @@ MetaScenes makes the world of Entertainment easier by providing creative and att
 - Reach more than million fans a time
 - Optimize benefits
 
-2. Celebrities - Idols :
-- Saving concert organization cost
-- Reach more than million fans a time
-- Optimize benefits
+
+2. Fans - Communities: :
+- Easy to join concert
+- Low ticket price
+- Get ticket change if cannot join whole concert
+- Get NFT give away
 
 <hr />
 
@@ -37,12 +39,14 @@ MetaScenes makes the world of Entertainment easier by providing creative and att
 <hr />
 
 ## 💰 Roadmap
-Q1.2022: Virtual staging R&D
-Q2.2022: Token insurance - Token Distribution Portal
-Q3.2022: IDO - Launch MVP MetaScenes
-Q4.2022: Announce representative Idols and time of show
-Q3.2023: Launch MetaScenes main version and NFT marketplace
-Q4.2023: Expand customer segment
+
+- Q1.2022: Virtual staging R&D
+- Q2.2022: Token insurance - Token Distribution Portal
+- Q3.2022: IDO - Launch MVP MetaScenes
+- Q4.2022: Announce representative Idols and time of show
+- Q3.2023: Launch MetaScenes main version and NFT marketplace
+- Q4.2023: Expand customer segment
+
 
 <hr />
 
