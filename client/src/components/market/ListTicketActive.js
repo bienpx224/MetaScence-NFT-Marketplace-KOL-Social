@@ -14,6 +14,7 @@ const ListTicketActive = () => {
         web3: state.rootReducer.web3
     }))
     useEffect(() => {
+        
         if (isLogin) {
             if (contract_market) {
                 contract_market.methods.MgetArrListing().call({ from: account })
@@ -40,12 +41,11 @@ const ListTicketActive = () => {
                     })
             }
         }
-    }, [isLogin, contract_market])
+    }, [isLogin, contract_market, account])
 
     const showTicket = () => {
         if (listTicket && listTicket[0] && listTicket[0].ticket) {
             let groupTicket = [];
-            groupTicket.t = []
             var groupId = [];
             
             for(var i=0; i<= listTicket.length-1; i++){
@@ -62,11 +62,12 @@ const ListTicketActive = () => {
                     groupTicket[index].data.push(ticket);
                 }
             }
-            console.log(groupTicket)
             
             return groupTicket.map( (e,key)=>{
                 return <Ticket type="1" key={key} groupId={e.groupId} amount={e.data.length} t={e.data[0]}/>
             })
+        }else{
+            return <h1>You don't have any Ticket</h1>
         }
     }
     

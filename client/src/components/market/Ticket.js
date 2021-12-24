@@ -28,21 +28,21 @@ const Ticket = (props) => {
                 // console.log(priceToWei)
                 contract_market.methods.Mcancel(props.t.tokenId).send({ from: account })
                     .on('transactionHash', function (hash) {
-                        console.log("transactionHash")
+                        // console.log("transactionHash")
                     })
                     .on('confirmation', function (confirmationNumber, receipt) {
-                        console.log("confirmation")
+                        // console.log("confirmation")
                     })
                     .on('receipt', function (receipt) {
                         // receipt example
-                        console.log("receipt")
-                        console.log(receipt);
+                        // console.log("receipt")
+                        // console.log(receipt);
                         buySuccess()
 
                     })
                     .on('error', function (error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
-                        console.log("onError")
-                        console.log(error)
+                        // console.log("onError")
+                        // console.log(error)
                     });
             } else {
                 showNotification("warning", "Opps!", "System is under maintenance")
@@ -59,40 +59,21 @@ const Ticket = (props) => {
                 // console.log(priceToWei)
                 await contract_market.methods.MbuyToken(props.t.listingId).send({ from: account, value: props.t.price })
                     .on('transactionHash', function (hash) {
-                        console.log("transactionHash")
-                        console.log(hash)
-                    })
-                    .on('sending', function (payload) {
-                        console.log("sending")
-                        console.log(payload)
-                    })
-                    .on('sent', function (payload) {
-                        console.log("sent")
-                        console.log(payload)
-                    })
-                    .on('confirmation', function (confirmationNumber, receipt) {
-                        console.log("confirmation")
-                        console.log(receipt)
-                        console.log(confirmationNumber)
-
-
+                        // console.log("transactionHash")
+                        // console.log(hash)
                     })
                     .on('receipt', function (receipt) {
                         // receipt example
-                        console.log("receipt")
-                        console.log(receipt);
+                        // console.log("receipt")
+                        // console.log(receipt);
                         buySuccess()
 
                     })
                     .on('error', function (error, receipt) { // If the transaction was rejected by the network with a receipt, the second parameter will be the receipt.
-                        console.log("onError")
-                        console.log(error)
-                        console.log(receipt)
+                        // console.log("onError")
+                        // console.log(error)
+                        // console.log(receipt)
                     })
-                    .then(function (receipt) {
-                        console.log("last")
-                        console.log(receipt)
-                    });
             } else {
                 showNotification("warning", "Opps!", "System is under maintenance")
             }
@@ -159,7 +140,7 @@ const Ticket = (props) => {
     return (
         <div className="col-md-3 col-lg-3">
             <div className="block-member" style={{ minHeight: "260px" }}>
-                <img src={props.t.ticket.img} alt="" />
+                <img src={props.t.ticket.img==""?"img/ticket.png":props.t.ticket.img} alt="" />
                 <div className="member-info" style={{ backgroundColor: "#4252a980" }}>
                     <h6 className="uppercase mb-0 ">{props.t.ticket.singer} - Left: {props.amount}</h6>
                     <span className=" mt-0"> {props.t.ticket.place}  </span><br></br>

@@ -40,8 +40,6 @@ const App = () => {
         // get balanceOf
         contract_nft.methods.balanceOf(account).call({ from: account })
           .then((rs) => {
-            console.log("balance MST : ")
-            console.log(rs)
             dispatch(get_balance({balance: rs}))
           })
       }
