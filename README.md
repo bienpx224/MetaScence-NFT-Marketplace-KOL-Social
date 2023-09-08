@@ -12,6 +12,8 @@ MetaScenes makes the world of Entertainment easier by providing creative and att
 
 MetaScenes makes the world of Entertainment easier by providing creative and attractive virtual stage. Celebrities, Idols, KOLs, even talent people can organize the concert which connect their fans or communities via metaverse space on real time by their avatar.
 
+![image](https://github.com/bienpx224/MetaScence/assets/23361028/8703f5af-fd9b-47f9-a742-59f7a21f3ee9)
+
 ## 🔬 Feautures
 
 1. Celebrities - Idols :
