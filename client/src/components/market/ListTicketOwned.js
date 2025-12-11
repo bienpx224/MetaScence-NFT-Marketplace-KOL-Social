@@ -4,7 +4,7 @@ import Ticket from "./Ticket";
 import Navigate from "../header/Navigate";
 
 const ListTicketOwned = () => {
-    const [listTicketOwned, setListTicketOwned] = useState()
+    const [listTicket, setListTicket] = useState()
     const { contract_market, contract_nft, account, isLogin, web3 } = useSelector((state) => ({
         contract_market: state.rootReducer.contract_market,
         contract_nft: state.rootReducer.contract_nft,
@@ -36,17 +36,38 @@ const ListTicketOwned = () => {
                                         }
                                     }
                                 });
-                                setListTicketOwned(data2)
+                                setListTicket(data2)
                             })
                     })
             }
         }
     }, [isLogin, contract_market])
+    
     const showTicketOwned = () => {
-        if (listTicketOwned && listTicketOwned[0]) {
-            return listTicketOwned.map((e, key) => {
-                return <Ticket type="0" key={key} t={e} />
+        if (listTicket && listTicket[0] && listTicket[0].ticket) {
+            let groupTicket = [];
+            var groupId = [];
+            
+            for(var i=0; i<= listTicket.length-1; i++){
+                var id = listTicket[i].ticket.groupId
+                var ticket = listTicket[i]
+                if(groupId.includes(id)){
+                    var index = groupId.indexOf(id)
+                    groupTicket[index] = {...groupTicket[index], groupId: groupId[index] }
+                    groupTicket[index].data.push(ticket);          
+                }else{
+                    groupId.push(id)
+                    var index = groupId.indexOf(id)
+                    groupTicket[index] = {...groupTicket[index], groupId: groupId[index], data:[] }
+                    groupTicket[index].data.push(ticket);
+                }
+            }
+            
+            return groupTicket.map( (e,key)=>{
+                return <Ticket type="0" key={key} groupId={e.groupId} amount={e.data.length} t={e.data[0]}/>
             })
+        }else{
+            return <h1>You don't have any Ticket</h1>
         }
     }
     return (

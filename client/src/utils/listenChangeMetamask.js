@@ -95,7 +95,6 @@ export function checkValidNetwork(accounts, networkId, dispatch) {
     nameNet = "Ganache"
   else
     nameNet = NETWORK_ID
-  console.log("hihi")
   if (networkId !== NETWORK_ID) //must be on mainnet or Testnet
   {
     dispatch(metamask_connect({ account: "", networkId, isLogin: false }))
